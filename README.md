@@ -16,8 +16,8 @@ A URL e a chave publishable estão em `supabase-config.js`. A chave publishable 
 A busca por GTIN consulta primeiro o Open Food Facts e depois a Bluesoft Cosmos. O token Cosmos e o User-Agent são usados somente pela função `cosmos-gtin` no Supabase; não os coloque em `app.js`, `supabase-config.js` ou no GitHub.
 
 1. Na conta Bluesoft Cosmos, obtenha o token da API e o User-Agent exibidos na página oficial da API.
-2. No Supabase, abra **Project Settings → Edge Functions → Secrets** e cadastre `BLUESOFT_COSMOS_TOKEN` e `BLUESOFT_COSMOS_USER_AGENT`.
-3. Implante a função do diretório `supabase/functions/cosmos-gtin` com a Supabase CLI: `supabase functions deploy cosmos-gtin --project-ref yyegkdtbkbtpwyrnbfhk`.
+2. No GitHub, abra **Settings → Secrets and variables → Actions** e crie os secrets `BLUESOFT_COSMOS_TOKEN`, `BLUESOFT_COSMOS_USER_AGENT` e `SUPABASE_ACCESS_TOKEN` (token pessoal de acesso da sua conta Supabase).
+3. Em **Actions → Deploy private Bluesoft lookup → Run workflow**, execute a implantação. O workflow grava as credenciais como secrets do Supabase e publica a função; os valores não aparecem nos arquivos nem nos logs.
 
 O plano Basic informa limite de 25 consultas por dia. A função exige uma sessão autenticada do ValidaStock e valida o GTIN antes da consulta. Confira os dados sugeridos antes de salvar.
 
