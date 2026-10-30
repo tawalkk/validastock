@@ -39,3 +39,16 @@ $('#authForm').onsubmit=async e=>{e.preventDefault();showError('');const b=$('#a
 const signout=document.createElement('button');signout.className='auth-toggle';signout.textContent='Sair';signout.onclick=()=>{session=null;localStorage.removeItem(KEY);db={products:[],lots:[],movements:[]};setSignedIn(false)};$('.sidebar-bottom').append(signout);
 $('#today').textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(today);setSignedIn(false);restore();
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
+
+let scannerStream=null,scannerFrame=0,scannerDetector=null,scannerActive=false;
+const barcodeDialog=$('#barcodeDialog'),barcodeVideo=$('#barcodeVideo'),barcodeStatus=$('#barcodeStatus');
+function stopBarcodeScanner(){scannerActive=false;if(scannerFrame)cancelAnimationFrame(scannerFrame);scannerFrame=0;if(scannerStream)scannerStream.getTracks().forEach(track=>track.stop());scannerStream=null;barcodeVideo.srcObject=null;}
+async function scanBarcodeFrame(){if(!scannerActive)return;if(barcodeVideo.readyState>=HTMLMediaElement.HAVE_ENOUGH_DATA){try{const codes=await scannerDetector.detect(barcodeVideo);if(codes.length){const field=$('#productForm [name="barcode"]');field.value=codes[0].rawValue;field.dispatchEvent(new Event('input',{bubbles:true}));stopBarcodeScanner();barcodeDialog.close();field.focus();toast('Código de barras lido.');return}}catch{}}
+ if(scannerActive)scannerFrame=requestAnimationFrame(scanBarcodeFrame);
+}
+$('#scanBarcode').onclick=async()=>{barcodeStatus.classList.remove('error');barcodeStatus.textContent='Aponte a câmera para o código de barras.';barcodeDialog.showModal();
+ if(!('BarcodeDetector'in window)){barcodeStatus.textContent='Este navegador não oferece leitura de código de barras pela câmera. Digite o código no campo do produto.';barcodeStatus.classList.add('error');return}
+ if(!navigator.mediaDevices?.getUserMedia){barcodeStatus.textContent='A câmera precisa de uma conexão segura (HTTPS ou localhost). Digite o código manualmente.';barcodeStatus.classList.add('error');return}
+ try{const formats=typeof BarcodeDetector.getSupportedFormats==='function'?await BarcodeDetector.getSupportedFormats():undefined;scannerDetector=new BarcodeDetector(formats?.length?{formats}:undefined);scannerStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});barcodeVideo.srcObject=scannerStream;await barcodeVideo.play();scannerActive=true;scannerFrame=requestAnimationFrame(scanBarcodeFrame)}catch(error){stopBarcodeScanner();barcodeStatus.textContent=error.name==='NotAllowedError'?'Permita o acesso à câmera para ler o código.':'Não foi possível iniciar a câmera. Digite o código manualmente.';barcodeStatus.classList.add('error')}
+};
+$('#closeBarcodeScanner').onclick=()=>barcodeDialog.close();barcodeDialog.addEventListener('close',stopBarcodeScanner);

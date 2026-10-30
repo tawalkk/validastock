@@ -27,4 +27,4 @@ Sirva esta pasta por `localhost` ou HTTPS. Exemplo com PHP instalado: execute `p
 
 ## Escopo atual
 
-A primeira conexão usa uma conta como proprietária dos dados. Ainda não há estrutura multiempresa/filiais e papéis de funcionário, conforme a evolução descrita no documento. Também não há leitura de código de barras pela câmera. Antes de operar, configure HTTPS, confirmação e recuperação de conta e backups do projeto Supabase.
+A primeira conexão usa uma conta como proprietária dos dados. Ainda não há estrutura multiempresa/filiais e papéis de funcionário, conforme a evolução descrita no documento. O cadastro de produtos pode ler códigos de barras pela câmera em navegadores compatíveis; o preenchimento manual continua disponível. O acesso à câmera requer HTTPS ou localhost e autorização do usuário. Antes de operar, configure HTTPS, confirmação e recuperação de conta e backups do projeto Supabase.
