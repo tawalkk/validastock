@@ -1,0 +1,4 @@
+project_id = "yyegkdtbkbtpwyrnbfhk"
+
+[functions.cosmos-gtin]
+verify_jwt = true

@@ -11,6 +11,16 @@ Aplicação web responsiva de controle de validade, conectada ao Supabase.
 
 A URL e a chave publishable estão em `supabase-config.js`. A chave publishable pode ficar no navegador; nunca coloque uma chave `service_role` ou secret nesse projeto. O acesso às tabelas é restrito por políticas RLS para a conta autenticada.
 
+### Consulta ao Bluesoft Cosmos
+
+A busca por GTIN consulta primeiro o Open Food Facts e depois a Bluesoft Cosmos. O token Cosmos e o User-Agent são usados somente pela função `cosmos-gtin` no Supabase; não os coloque em `app.js`, `supabase-config.js` ou no GitHub.
+
+1. Na conta Bluesoft Cosmos, obtenha o token da API e o User-Agent exibidos na página oficial da API.
+2. No Supabase, abra **Project Settings → Edge Functions → Secrets** e cadastre `BLUESOFT_COSMOS_TOKEN` e `BLUESOFT_COSMOS_USER_AGENT`.
+3. Implante a função do diretório `supabase/functions/cosmos-gtin` com a Supabase CLI: `supabase functions deploy cosmos-gtin --project-ref yyegkdtbkbtpwyrnbfhk`.
+
+O plano Basic informa limite de 25 consultas por dia. A função exige uma sessão autenticada do ValidaStock e valida o GTIN antes da consulta. Confira os dados sugeridos antes de salvar.
+
 ## Abrir
 
 Sirva esta pasta por `localhost` ou HTTPS. Exemplo com PHP instalado: execute `php -S localhost:8000` dentro desta pasta e visite `http://localhost:8000`. Crie uma conta ou entre com uma conta já existente.
