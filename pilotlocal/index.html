@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101416">
+  <meta name="description" content="Pilot Local: automação visual para Windows com macros, fluxos, busca por cor e imagem e scripts seguros.">
+  <title>Pilot Local · Automação visual para Windows</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Pilot Local início"><span class="brand-mark">P</span><span>Pilot<span class="accent">Local</span><small>AUTOMAÇÃO VISUAL PARA WINDOWS</small></span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#recursos">Recursos</a><a href="#exemplos">Exemplos</a><a href="#como-funciona">Como funciona</a>
+    </nav>
+    <div class="header-actions"><button class="button button-quiet" data-open-auth="login">Entrar</button><button class="button button-primary" data-open-auth="signup">Criar conta</button></div>
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> CONTROLE PRECISO NO WINDOWS</div>
+        <h1>Automatize o repetitivo.<br><span class="gradient-text">Mantenha o controle.</span></h1>
+        <p class="hero-lead">Macros, fluxos e automação visual em um só lugar. Crie rotinas para sua área de trabalho com ferramentas simples, locais e fáceis de interromper.</p>
+        <div class="hero-actions"><button class="button button-primary button-large" data-open-auth="signup">Começar agora <span>↗</span></button><a class="button button-quiet button-large" href="#recursos">Explorar recursos <span>↓</span></a></div>
+        <div class="hero-note"><span>●</span> Feito para Windows · Criado por tawalk</div>
+      </div>
+      <div class="hero-visual" aria-label="Prévia ilustrativa do Pilot Local">
+        <div class="window-frame">
+          <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Pilot Local <b>/</b> Fluxos</span><span class="window-status"><i></i> Pronto</span></div>
+          <div class="app-preview">
+            <aside class="preview-nav"><div class="preview-logo">P</div><span class="selected">⌘</span><span>◈</span><span>▣</span><span>⌁</span><span>⚙</span></aside>
+            <div class="preview-main"><div class="preview-heading"><div><small>ROTINA ATUAL</small><h3>Conferir janela</h3></div><span class="pill">● Em execução</span></div>
+              <div class="flow-step"><span class="step-icon">◷</span><span><b>Aguardar</b><small>1.000 ms</small></span><span class="step-check">✓</span></div>
+              <div class="flow-line"></div><div class="flow-step"><span class="step-icon pink">⌖</span><span><b>Clicar</b><small>Posição 420 × 260</small></span><span class="step-check">✓</span></div>
+              <div class="flow-line"></div><div class="flow-step"><span class="step-icon blue">⌨</span><span><b>Enviar tecla</b><small>Enter</small></span><span class="step-next">•••</span></div>
+              <div class="preview-footer"><span>F7 para parar</span><button aria-label="Parar fluxo">■</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card float-top"><span class="float-icon">⌖</span><span><b>Busca visual</b><small>Cor e imagem</small></span></div>
+        <div class="float-card float-bottom"><span class="float-icon pink">⏺</span><span><b>Gravador de macro</b><small>Capture e reproduza</small></span></div>
+        <div class="visual-glow"></div>
+      </div>
+    </section>
+
+    <section class="trust-strip section-wrap"><span>UM KIT DE AUTOMAÇÃO PARA SUA ROTINA</span><div><b>Macros</b><i>·</i><b>Fluxos</b><i>·</i><b>Busca visual</b><i>·</i><b>Scripts locais</b></div></section>
+
+    <section class="section-wrap section-block" id="recursos">
+      <div class="section-heading"><div class="eyebrow">FERRAMENTAS DO PILOT</div><h2>Uma rotina mais simples,<br><span class="muted-heading">do seu jeito.</span></h2><p>Monte automações com controles visuais ou use comandos próprios. Cada recurso foi pensado para ficar claro enquanto roda e simples de parar.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-main"><div class="feature-icon pink">⏺</div><div class="feature-tag">CAPTURA E REPRODUÇÃO</div><h3>Macros que acompanham seu ritmo.</h3><p>Grave mouse e teclado, escolha quantas vezes repetir e ajuste o intervalo. Salve suas rotinas em arquivos locais.</p><div class="mini-timeline"><span>⤷</span><i></i><span>⌨</span><i></i><span>⤴</span><i></i><span>✓</span></div></article>
+        <article class="feature-card"><div class="feature-icon green">⌖</div><div class="feature-tag">LEITURA VISUAL</div><h3>Reaja ao que aparece na tela.</h3><p>Acompanhe pixels por cor ou aguarde uma imagem aparecer na janela selecionada.</p><div class="color-samples"><i></i><i></i><i></i><span>cor detectada</span></div></article>
+        <article class="feature-card"><div class="feature-icon blue">⌘</div><div class="feature-tag">FLUXOS VISUAIS</div><h3>Encadeie passos sem complicar.</h3><p>Combine espera, cliques, teclas, texto, repetição limitada e condição por cor.</p><div class="flow-chips"><span>Aguardar</span><b>→</b><span>Clicar</span><b>→</b><span>Repetir</span></div></article>
+        <article class="feature-card feature-wide"><div><div class="feature-icon violet">&lt;/&gt;</div><div class="feature-tag">SCRIPT LOCAL LIMITADO</div><h3>Automação legível, linha por linha.</h3><p>Use comandos pequenos para coordenar ações. O editor interpreta apenas a linguagem do Pilot Local.</p></div><pre class="mini-code"><code><span class="code-muted">// rotina de exemplo</span>
+wait 1000
+click 420 260
+key Enter
+log "Concluído"</code></pre></article>
+      </div>
+    </section>
+
+    <section class="example-section" id="exemplos"><div class="section-wrap example-layout"><div class="section-heading"><div class="eyebrow">COMANDOS DE EXEMPLO</div><h2>Comece pequeno.<br><span class="muted-heading">Evolua quando quiser.</span></h2><p>O Pilot Local usa uma linguagem própria, com comandos explícitos e limites para repetição, espera e tamanho do script.</p><button class="button button-primary" data-open-auth="signup">Criar minha conta <span>↗</span></button></div>
+      <div class="code-window"><div class="code-header"><span><i></i><i></i><i></i></span><b>rotina.pilotscript</b><button class="copy-button" id="copyExample">Copiar código</button></div><pre><code><span class="line"><em>01</em><span class="code-muted">// espera a janela terminar de abrir</span></span>
+<span class="line"><em>02</em><span class="code-key">wait</span> 1200</span>
+<span class="line"><em>03</em><span class="code-key">click</span> 420 260</span>
+<span class="line"><em>04</em><span class="code-key">text</span> <span class="code-string">"Olá, Pilot Local"</span></span>
+<span class="line"><em>05</em><span class="code-key">key</span> Enter</span>
+<span class="line"><em>06</em><span class="code-key">log</span> <span class="code-string">"Rotina concluída"</span></span></code></pre><div class="code-caption"><span>✓</span> Os scripts são processados localmente pelo aplicativo.</div></div>
+    </div></section>
+
+    <section class="section-wrap section-block" id="como-funciona"><div class="section-heading centered"><div class="eyebrow">COMECE EM POUCOS PASSOS</div><h2>Da conta à primeira rotina.</h2></div><div class="steps-grid"><article><span class="step-number">01</span><h3>Crie sua conta</h3><p>Cadastre-se com seu e-mail e confirme o endereço para entrar.</p></article><article><span class="step-number">02</span><h3>Ative o acesso</h3><p>Use a chave de licença que recebeu para liberar o Pilot Local.</p></article><article><span class="step-number">03</span><h3>Monte seu fluxo</h3><p>Grave uma macro, desenhe passos ou escreva um script local.</p></article><article><span class="step-number">04</span><h3>Controle a execução</h3><p>Acompanhe o status e use F7 para interromper as automações.</p></article></div></section>
+
+    <section class="security-section"><div class="section-wrap security-layout"><div><div class="eyebrow">FEITO PARA SER CLARO</div><h2>Você continua<br>no comando.</h2><p>O Pilot Local mantém macros, fluxos e scripts no seu computador. O app não executa programas externos, não usa plugins ou Lua e não lê a memória de outros processos.</p></div><div class="security-points"><div><span>✓</span><b>Parada rápida</b><small>F7 interrompe as rotinas em execução.</small></div><div><span>✓</span><b>Dados locais</b><small>Arquivos de automação ficam no Windows.</small></div><div><span>✓</span><b>Conta protegida</b><small>Login e licença usam Supabase Auth.</small></div></div></div></section>
+
+    <section class="cta-section section-wrap"><div class="cta-card"><div class="cta-orbit orbit-one"></div><div class="cta-orbit orbit-two"></div><div class="eyebrow">PILOT LOCAL · TAWALK</div><h2>Deixe as tarefas repetitivas<br>seguirem o fluxo.</h2><p>Entre na sua conta ou crie uma para ativar seu acesso.</p><div class="hero-actions"><button class="button button-primary button-large" data-open-auth="signup">Criar conta <span>↗</span></button><button class="button button-light button-large" data-open-auth="login">Já tenho uma conta</button></div></div></section>
+  </main>
+
+  <footer class="site-footer section-wrap"><a class="brand" href="#top"><span class="brand-mark">P</span><span>Pilot<span class="accent">Local</span><small>AUTOMAÇÃO VISUAL PARA WINDOWS</small></span></a><p>Criado por <b>tawalk</b>. Automação visual para Windows.</p><a href="#top">Voltar ao topo ↑</a></footer>
+
+  <dialog class="auth-dialog" id="authDialog"><button class="dialog-close" id="closeAuth" aria-label="Fechar">×</button><div class="auth-brand"><span class="brand-mark">P</span><div><b>Pilot<span class="accent">Local</span></b><small>CONTA E LICENÇA</small></div></div>
+    <section id="authPanel"><div class="eyebrow" id="authEyebrow">SUA CONTA</div><h2 id="authTitle">Entre no Pilot Local</h2><p class="auth-intro" id="authIntro">Acesse sua conta para conferir e ativar sua licença.</p>
+      <form id="authForm"><label for="authEmail">E-mail</label><input id="authEmail" type="email" autocomplete="email" required placeholder="voce@exemplo.com"><label for="authPassword">Senha</label><input id="authPassword" type="password" autocomplete="current-password" required minlength="8" placeholder="Pelo menos 8 caracteres"><button class="button button-primary auth-submit" id="authSubmit">Entrar</button></form>
+      <button class="auth-link" id="authSwitch">Ainda não tem conta? Criar conta</button><button class="auth-link" id="forgotLink">Esqueci minha senha</button><div class="form-message" id="authMessage" role="status" aria-live="polite"></div>
+    </section>
+    <section id="resetPanel" hidden><div class="eyebrow">RECUPERAÇÃO DE ACESSO</div><h2>Escolha uma nova senha</h2><p class="auth-intro">O link é individual e só pode ser usado uma vez.</p><form id="resetForm"><label for="newPassword">Nova senha</label><input id="newPassword" type="password" autocomplete="new-password" minlength="8" required><label for="confirmPassword">Confirme a nova senha</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="8" required><button class="button button-primary auth-submit">Salvar nova senha</button></form><div class="form-message" id="resetMessage" role="status" aria-live="polite"></div></section>
+    <section id="accountPanel" hidden><div class="eyebrow">ÁREA DA CONTA</div><h2 id="accountTitle">Acesso</h2><p class="auth-intro" id="accountIntro"></p><div id="customerPanel" hidden><div class="license-status" id="licenseStatus"></div><form id="activateForm"><label for="licenseKey">Chave de ativação</label><input id="licenseKey" autocomplete="off" placeholder="PL-XXXXXXXX-XXXXXXXX-..."><button class="button button-primary auth-submit">Ativar licença</button></form></div><div id="creatorPanel" hidden><div class="creator-form"><label>Quantidade<input id="licenseCount" type="number" min="1" max="25" value="1"></label><label>Dias de uso<input id="licenseDuration" type="number" min="1" max="3650" value="30"></label><label>Prazo para ativar<input id="licenseActivation" type="number" min="1" max="3650" value="30"></label></div><button class="button button-primary auth-submit" id="createKeys">Gerar chaves</button><textarea id="issuedKeys" rows="3" readonly placeholder="As chaves aparecem aqui uma única vez."></textarea><div class="license-list-head"><b>Chaves emitidas</b><button class="auth-link" id="refreshKeys">Atualizar</button></div><div class="license-list" id="licenseList"></div></div><button class="auth-link" id="signOut">Sair da conta</button></section>
+    <p class="auth-privacy">Sua senha é validada pelo Supabase Auth. Nunca compartilhe sua chave de ativação.</p>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
